@@ -347,3 +347,6 @@ ASALocalRun/
 healthchecksdb
 
 # End of https://www.gitignore.io/api/visualstudio
+/Football-League/obj
+/Football-League.Data/obj
+/Football-League.Services/obj
