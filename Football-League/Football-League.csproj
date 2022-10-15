@@ -18,4 +18,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Football-League.Data\Football-League.Data.csproj" />
+  </ItemGroup>
+
 </Project>
