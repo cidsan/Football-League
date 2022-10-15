@@ -58,3 +58,5 @@ F:\Projects\My Projects\Football-League\Football-League\obj\Debug\net5.0\Footbal
 F:\Projects\My Projects\Football-League\Football-League\obj\Debug\net5.0\ref\Football-League.dll
 F:\Projects\My Projects\Football-League\Football-League\obj\Debug\net5.0\Football-League.pdb
 F:\Projects\My Projects\Football-League\Football-League\obj\Debug\net5.0\Football-League.genruntimeconfig.cache
+F:\Projects\My Projects\Football-League\Football-League\bin\Debug\net5.0\Football-League.Data.dll
+F:\Projects\My Projects\Football-League\Football-League\bin\Debug\net5.0\Football-League.Data.pdb

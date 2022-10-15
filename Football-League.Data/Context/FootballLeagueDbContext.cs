@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Football_League.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Football_League.Data.Context
 {
@@ -12,6 +11,28 @@ namespace Football_League.Data.Context
         public FootballLeagueDbContext(DbContextOptions<FootballLeagueDbContext> options) : base(options)
         {
             Database.EnsureCreated();
+        }
+
+        public DbSet<Team> Teams { get; set; }
+
+        public DbSet<Match> Matches { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            var configurations = Assembly.GetExecutingAssembly().GetTypes()
+                                 .Where(t => t.GetInterfaces()
+                                 .Any(gi => gi.IsGenericType && gi.GetGenericTypeDefinition() == typeof(IEntityTypeConfiguration<>)))
+                                 .ToList();
+
+            foreach (var configuration in configurations)
+            {
+                dynamic configurationInstance = Activator.CreateInstance(configuration);
+
+                builder.ApplyConfiguration(configurationInstance);
+            }
+
+            base.OnModelCreating(builder);
         }
     }
 }
