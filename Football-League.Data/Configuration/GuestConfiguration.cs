@@ -10,7 +10,8 @@ namespace Football_League.Data.Configuration
         {
             builder.HasOne(b => b.GuestTeam)
                    .WithMany(b => b.GuestMatches)
-                   .HasForeignKey(b => b.GuestTeamId);
+                   .HasForeignKey(b => b.GuestTeamId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
