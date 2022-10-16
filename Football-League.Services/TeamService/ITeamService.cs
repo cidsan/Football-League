@@ -12,6 +12,6 @@ namespace Football_League.Services.TeamService
 
         Task DeleteAsync(int id);
 
-        Task<Team> GetAsync(Team team);
+        Task<Team> GetAsync(int id);
     }
 }

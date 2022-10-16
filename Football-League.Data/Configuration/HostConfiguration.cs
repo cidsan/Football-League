@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Match = Football_League.Data.Models.Match;
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Match = Football_League.Data.Models.Match;
 
 namespace Football_League.Data.Configuration
 {
