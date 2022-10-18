@@ -15,9 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Football-League.Data\Football-League.Data.csproj" />
-    <ProjectReference Include="..\Football-League.Repository\Football-League.Repository.csproj" />
-    <ProjectReference Include="..\Football-League.Services\Football-League.Services.csproj" />
   </ItemGroup>
 
 </Project>
