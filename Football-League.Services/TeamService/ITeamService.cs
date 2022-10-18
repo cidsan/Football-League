@@ -3,15 +3,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Football_League.Repository.TeamRepository
+namespace Football_League.Services.TeamService
 {
-    public interface ITeamRepository
+    public  interface ITeamService
     {
         Task<Team> CreateAsync(Team team);
 
         Task<Team> UpdateAsync(Team team);
 
-        Task DeleteAsync(Team team);
+        Task DeleteAsync(int id);
 
         Task<Team> GetAsync(int id);
 

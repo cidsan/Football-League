@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Football_League.Data.Models
+﻿namespace Football_League.Data.Models
 {
     public class Match
     {
@@ -21,5 +15,9 @@ namespace Football_League.Data.Models
         public Team GuestTeam { get; set; }
 
         public string Winner { get; set; }
+
+        public int WinnerId { get; set; }
+
+        public bool isDraw { get; set; }
     }
 }

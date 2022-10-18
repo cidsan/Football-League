@@ -1,10 +1,9 @@
 ﻿using Football_League.Data.Context;
 using Football_League.Data.Models;
+
 using Microsoft.EntityFrameworkCore;
-using System;
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Football_League.Repository.TeamRepository
@@ -28,6 +27,7 @@ namespace Football_League.Repository.TeamRepository
         public async Task<Team> UpdateAsync(Team team)
         {
             _context.Entry(team).State = EntityState.Modified;
+            _context.Update(team);
             await _context.SaveChangesAsync();
 
             return team;

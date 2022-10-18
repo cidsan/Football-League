@@ -1,17 +1,16 @@
 using Football_League.Data.Context;
+using Football_League.Data.Extensions;
+using Football_League.Repository.MatchRepository;
+using Football_League.Repository.TeamRepository;
+using Football_League.Services.MatchService;
+using Football_League.Services.TeamService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Football_League
 {
@@ -29,6 +28,12 @@ namespace Football_League
         {
             services.AddDbContext<FootballLeagueDbContext>(config => config.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<IMatchRepository, MatchRepository>();
+            
+            services.AddScoped<ITeamService, TeamService>();
+            services.AddScoped<IMatchService, MatchService>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -45,6 +50,8 @@ namespace Football_League
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Football_League v1"));
             }
+
+            app.ExceptionHandler();
 
             app.UseRouting();
 

@@ -3,15 +3,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Football_League.Repository.MatchRepository
+namespace Football_League.Services.MatchService
 {
-    public interface IMatchRepository
+    public interface IMatchService
     {
         Task<Match> CreateAsync(Match match);
 
-        Task<Match> UpdateAsync(Match match);
+        Task<Match> StartMatchAsync(Match match);
 
-        Task DeleteAsync(Match match);
+        Task DeleteAsync(int id);
 
         Task<Match> GetAsync(int id);
 
