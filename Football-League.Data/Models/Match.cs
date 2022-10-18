@@ -15,5 +15,9 @@
         public Team GuestTeam { get; set; }
 
         public string Winner { get; set; }
+
+        public int WinnerId { get; set; }
+
+        public bool isDraw { get; set; }
     }
 }

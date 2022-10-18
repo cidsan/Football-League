@@ -1,5 +1,6 @@
 ﻿using Football_League.Data.Models;
 
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Football_League.Services.TeamService
@@ -13,5 +14,7 @@ namespace Football_League.Services.TeamService
         Task DeleteAsync(int id);
 
         Task<Team> GetAsync(int id);
+
+        Task<IEnumerable<Team>> GetAllAsync();
     }
 }

@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MatchService\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Football-League.Data\Football-League.Data.csproj" />
     <ProjectReference Include="..\Football-League.Repository\Football-League.Repository.csproj" />
   </ItemGroup>

@@ -1,7 +1,8 @@
-﻿using Football_League.Data.Models;
+﻿using Football_League.Data.ApplicationExceptions;
+using Football_League.Data.Models;
+using Football_League.Data.Util;
 using Football_League.Repository.TeamRepository;
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,11 +19,11 @@ namespace Football_League.Services.TeamService
 
         public async Task<Team> CreateAsync(Team team)
         {
-            var teamObj = await _teamRepository.GetAsync(team.Id);
+            var teamToBeCreated = await _teamRepository.GetAsync(team.Id);
 
-            if (teamObj != null)
+            if (teamToBeCreated != null)
             {
-                throw new Exception("Team Already exists");
+                throw new EntityNotFoundException(ExceptionMessages.TeamNotFound);
             }
 
             var newTeam = new Team
@@ -45,9 +46,9 @@ namespace Football_League.Services.TeamService
         {
             var team = await _teamRepository.GetAsync(id);
 
-            if(team == null)
+            if (team == null)
             {
-                throw new Exception("Not found");
+                throw new EntityNotFoundException(ExceptionMessages.TeamNotFound);
             }
 
             await _teamRepository.DeleteAsync(team);
@@ -59,10 +60,15 @@ namespace Football_League.Services.TeamService
 
             if (team == null)
             {
-                throw new Exception("Not found");
+                throw new EntityNotFoundException(ExceptionMessages.TeamNotFound);
             }
 
             return team;
+        }
+
+        public async Task<IEnumerable<Team>> GetAllAsync()
+        {
+            return await _teamRepository.GetAllAsync();
         }
     }
 }

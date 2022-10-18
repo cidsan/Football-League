@@ -7,6 +7,6 @@ namespace Football_League.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-
+         
     }
 }
