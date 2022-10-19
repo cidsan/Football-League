@@ -18,6 +18,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Football-League.Services", 
 		{A876B8C8-9A91-4522-A244-B3C46FCF4DDD} = {A876B8C8-9A91-4522-A244-B3C46FCF4DDD}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football-League.UnitTests", "..\Football-League.UnitTests\Football-League.UnitTests.csproj", "{70D25492-6114-4A2E-8BE0-38CE8CFB35AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40240B3D-8E53-49E4-BC6A-0C735AAC2EAA} = {40240B3D-8E53-49E4-BC6A-0C735AAC2EAA}
+		{41FB34BC-3F40-4A4A-A621-31F4569494C3} = {41FB34BC-3F40-4A4A-A621-31F4569494C3}
+		{A876B8C8-9A91-4522-A244-B3C46FCF4DDD} = {A876B8C8-9A91-4522-A244-B3C46FCF4DDD}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +47,10 @@ Global
 		{41FB34BC-3F40-4A4A-A621-31F4569494C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41FB34BC-3F40-4A4A-A621-31F4569494C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41FB34BC-3F40-4A4A-A621-31F4569494C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D25492-6114-4A2E-8BE0-38CE8CFB35AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D25492-6114-4A2E-8BE0-38CE8CFB35AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D25492-6114-4A2E-8BE0-38CE8CFB35AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D25492-6114-4A2E-8BE0-38CE8CFB35AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
